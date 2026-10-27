@@ -33,16 +33,17 @@
       <div class="container">
         <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
         <h1>The evasion database</h1>
-        <p class="lead">Explore the coded evidence for Libya, Somalia, Haiti and Eritrea across 16 sanctions episodes. Filter by variable, strategy and tactic, and read the complete report excerpts.</p>
+        <p class="lead">Explore the coded evidence for 18 sanctions cases across 69 episodes. Filter by variable, strategy and tactic, and read the complete report excerpts.</p>
       </div>
     </section>
 
     <section style="padding-top:2.4rem">
       <div class="container">
-        <p class="notice"><strong>Libya · Somalia · Haiti · Eritrea · 16 episodes.</strong> Coded examples transcribed from the 16 supplied research documents. The Somalia case includes actors predating Al-Shabaab. Episode dates and coding follow those documents. Report dates may fall outside the assigned episode. Blank variables mean no example supplied, not proof of no evasion. Two Eritrea rows explicitly have “Strategy not coded”; they retain their tactics and examples. References are extracted from the supplied text; the original reports have not been independently checked.</p>
+        <p class="notice"><strong>18 cases · 69 episodes.</strong> Coded examples transcribed from the 69 supplied research documents. The Somalia case includes actors predating Al-Shabaab. Episode dates and coding follow those documents. Report dates may fall outside the assigned episode. Blank variables mean no example supplied, not proof of no evasion. Missing or unspecified strategies remain marked “Strategy not coded”. Additional source coding notes are preserved in the details. Episode 12.3 has blank metadata; its dates remain unspecified. References are extracted from the supplied text; the original reports have not been independently checked.</p>
         <div class="db-layout">
           <aside class="filters" aria-label="Filters">
             <h3>Search examples</h3><label for="q">Keyword</label><input id="q" type="text" placeholder="Search the full text and coding">
+            <h3>Record type</h3><select id="status" aria-label="Record type"></select>
             <h3>Case</h3><select id="case" aria-label="Case"></select>
             <h3>Episode</h3><select id="episode" aria-label="Episode"></select>
             <h3>Goods / Money / Services / Other</h3><select id="group" aria-label="Variable group"></select>
@@ -58,7 +59,7 @@
               <span><label for="sort">Sort by</label><select id="sort"><option value="source">Episode and source order</option><option value="newest">Report year newest first</option><option value="oldest">Report year oldest first</option></select></span>
               <button id="csv" class="btn btn-dark btn-sm">Download filtered CSV</button>
             </div>
-            <p>One card represents one coded row. Identical excerpts assigned to several variables or episodes remain separate records.</p>
+            <p>One card represents one source row. “No violations reported” statements are identified separately and are not counted as evasion examples. Identical excerpts assigned to several variables or episodes remain separate records.</p>
             <div id="cases" class="cases"></div>
             <button id="more" class="btn btn-outline btn-sm" style="margin-top:1rem">Show more examples</button>
           </div>
