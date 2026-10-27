@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/database-somalia.css">
 </head>
 <body data-page="database">
   <a class="skip" href="#main">Skip to content</a>
@@ -32,60 +33,33 @@
       <div class="container">
         <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
         <h1>The evasion database</h1>
-        <p class="lead">Choose one or more categories and only the matching cases are shown. With nothing selected, every case is listed.</p>
+        <p class="lead">Explore the coded evidence for Somalia across six sanctions episodes. Filter by variable, strategy and tactic, and read the complete report excerpts.</p>
       </div>
     </section>
 
     <section style="padding-top:2.4rem">
       <div class="container">
-        <div class="notice"><strong>About this data.</strong> These entries are compiled from public reporting on UN Panel of Experts reports and are meant as a working sample. The &ldquo;indicator&rdquo; lines are analyst notes, not quotations from the reports. Check each case against the original UN document before citing it. To load the project's full coded dataset, edit <code>data/cases.js</code>.</div>
-
+        <p class="notice"><strong>Somalia · Case 8 · Six episodes.</strong> Coded examples transcribed from the six supplied research documents. The case includes actors predating Al-Shabaab. Episode dates and coding follow those documents. Report dates may fall outside the assigned episode. Blank variables mean no example supplied, not proof of no evasion. References are extracted from the supplied text; the original reports have not been independently checked.</p>
         <div class="db-layout">
           <aside class="filters" aria-label="Filters">
-            <h3>Search</h3>
-            <div class="field"><label for="q" class="label">Keyword</label><input id="q" type="text" placeholder="e.g. AIS, charcoal, crypto" autocomplete="off"></div>
-
-            <h3>Category</h3>
-            <div id="chips" class="chips" role="group" aria-label="Evasion categories"></div>
-
-            <h3>When several are selected, show cases that match</h3>
-            <div id="mode" class="seg" role="group" aria-label="Match mode">
-              <button type="button" data-mode="any" aria-pressed="true">Any</button>
-              <button type="button" data-mode="all" aria-pressed="false">All</button>
-            </div>
-
-            <h3>Sanctions regime</h3>
-            <select id="regime" aria-label="Sanctions regime"><option value="">All regimes</option></select>
-
-            <h3>Year</h3>
-            <select id="year" aria-label="Year"><option value="">All years</option></select>
-
-            <div class="row">
-              <button id="clear" class="btn btn-outline btn-sm" type="button" style="flex:1">Clear filters</button>
-            </div>
+            <h3>Search examples</h3><label for="q">Keyword</label><input id="q" type="text" placeholder="Search the full text and coding">
+            <h3>Episode</h3><select id="episode" aria-label="Episode"></select>
+            <h3>Goods / Money / Services / Other</h3><select id="group" aria-label="Variable group"></select>
+            <h3>Variable</h3><select id="variable" aria-label="Variable"></select>
+            <h3>Strategy</h3><select id="strategy" aria-label="Strategy"></select>
+            <h3>Tactic</h3><select id="tactic" aria-label="Tactic"></select>
+            <h3>Report year</h3><select id="year" aria-label="Report year"></select>
+            <div class="row"><button id="clear" class="btn btn-outline btn-sm">Clear filters</button></div>
           </aside>
-
           <div>
-            <div class="minichart">
-              <h4>Categories in the current results</h4>
-              <div id="chart"></div>
+            <p id="episode-info"></p>
+            <div class="results-bar"><span id="count" class="count" aria-live="polite"></span>
+              <span><label for="sort">Sort by</label><select id="sort"><option value="source">Episode and source order</option><option value="newest">Report year newest first</option><option value="oldest">Report year oldest first</option></select></span>
+              <button id="csv" class="btn btn-dark btn-sm">Download filtered CSV</button>
             </div>
-
-            <div class="results-bar">
-              <span id="count" class="count" aria-live="polite"></span>
-              <span style="display:flex;gap:.6rem;align-items:center;flex-wrap:wrap">
-                <label for="sort" class="label" style="margin:0">Sort by</label>
-                <select id="sort" style="width:auto">
-                  <option value="year-desc">Newest first</option>
-                  <option value="year-asc">Oldest first</option>
-                  <option value="regime">Regime</option>
-                  <option value="title">Title A&ndash;Z</option>
-                </select>
-                <button id="csv" class="btn btn-dark btn-sm" type="button">Download CSV</button>
-              </span>
-            </div>
-            <div id="active" class="active-filters" aria-label="Active filters"></div>
+            <p>One card represents one coded row. Identical excerpts assigned to several variables or episodes remain separate records.</p>
             <div id="cases" class="cases"></div>
+            <button id="more" class="btn btn-outline btn-sm" style="margin-top:1rem">Show more examples</button>
           </div>
         </div>
       </div>
@@ -104,8 +78,9 @@
     </div>
   </footer>
 
-  <script src="data/cases.js"></script>
+  <script src="data/somalia.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/database.js"></script>
+  <script src="js/database-somalia.js"></script>
 </body>
 </html>
+
