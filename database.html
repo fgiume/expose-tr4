@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/database-somalia.css">
+  <link rel="stylesheet" href="css/database-coded.css">
 </head>
 <body data-page="database">
   <a class="skip" href="#main">Skip to content</a>
@@ -33,16 +33,17 @@
       <div class="container">
         <div class="tagline">EXPOSE &middot; Experts Panels on Sanctions Evasion</div>
         <h1>The evasion database</h1>
-        <p class="lead">Explore the coded evidence for Somalia across six sanctions episodes. Filter by variable, strategy and tactic, and read the complete report excerpts.</p>
+        <p class="lead">Explore the coded evidence for Libya, Somalia, Haiti and Eritrea across 16 sanctions episodes. Filter by variable, strategy and tactic, and read the complete report excerpts.</p>
       </div>
     </section>
 
     <section style="padding-top:2.4rem">
       <div class="container">
-        <p class="notice"><strong>Somalia · Case 8 · Six episodes.</strong> Coded examples transcribed from the six supplied research documents. The case includes actors predating Al-Shabaab. Episode dates and coding follow those documents. Report dates may fall outside the assigned episode. Blank variables mean no example supplied, not proof of no evasion. References are extracted from the supplied text; the original reports have not been independently checked.</p>
+        <p class="notice"><strong>Libya · Somalia · Haiti · Eritrea · 16 episodes.</strong> Coded examples transcribed from the 16 supplied research documents. The Somalia case includes actors predating Al-Shabaab. Episode dates and coding follow those documents. Report dates may fall outside the assigned episode. Blank variables mean no example supplied, not proof of no evasion. Two Eritrea rows explicitly have “Strategy not coded”; they retain their tactics and examples. References are extracted from the supplied text; the original reports have not been independently checked.</p>
         <div class="db-layout">
           <aside class="filters" aria-label="Filters">
             <h3>Search examples</h3><label for="q">Keyword</label><input id="q" type="text" placeholder="Search the full text and coding">
+            <h3>Case</h3><select id="case" aria-label="Case"></select>
             <h3>Episode</h3><select id="episode" aria-label="Episode"></select>
             <h3>Goods / Money / Services / Other</h3><select id="group" aria-label="Variable group"></select>
             <h3>Variable</h3><select id="variable" aria-label="Variable"></select>
@@ -78,9 +79,9 @@
     </div>
   </footer>
 
-  <script src="data/somalia.js"></script>
+  <script src="data/coded-cases.js"></script>
   <script src="js/main.js"></script>
-  <script src="js/database-somalia.js"></script>
+  <script src="js/database-coded.js"></script>
 </body>
 </html>
 

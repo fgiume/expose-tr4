@@ -1,0 +1,9 @@
+.source-excerpt{white-space:pre-wrap;overflow-wrap:anywhere;margin-top:1rem;line-height:1.75}
+.case details{border-top:1px dashed var(--line);padding-top:.8rem}
+.case summary{cursor:pointer;color:var(--blue);font-weight:700}
+.case dt{font-size:.8rem;text-transform:uppercase;font-weight:700;margin-top:.8rem}
+.case dd{margin:0;overflow-wrap:anywhere}
+.filters select{max-width:100%;font-size:.85rem}
+.filters label{font-size:.85rem}
+.tag{white-space:normal}
+[hidden]{display:none!important}
