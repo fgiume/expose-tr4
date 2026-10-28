@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Document Search – EXPOSE</title><link rel="icon" href="assets/favicon.svg"><link rel="stylesheet" href="css/style.css"><link rel="stylesheet" href="css/document-search.css"></head><body><a class="skip" href="#main">Skip to content</a><header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="EXPOSE home"><img src="assets/logo.svg" alt="EXPOSE"></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="menu">&#9776; Menu</button>
+      <ul id="menu" class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About us</a></li>
+        <li><a href="our-project.html">Our project</a></li>
+        <li><a href="database.html">Database</a></li>
+        <li><a href="countries.html">Countries</a></li>
+        <li class="cta"><a href="contact.html">Contact</a></li>
+      <li><a href="document-search.html" aria-current="page">Document Search</a></li></ul>
+    </div>
+  </header>
+<main id="main"><section class="page-hero"><div class="container"><div class="tagline">EXPOSE · Episode document collection</div><h1>Document Search</h1><p class="lead">Search all 69 episode documents across 18 sanctions cases. Find relevant passages and open the original research document.</p></div></section>
+<section class="search-section"><div class="container"><form id="search-form" class="search-box"><label for="query">Search words</label><div class="query-row"><input id="query" type="search" placeholder="e.g. charcoal smuggling" autocomplete="off"><button class="btn btn-primary" type="submit">Search documents</button></div><div class="search-controls"><div><label for="search-case">Case</label><select id="search-case"><option value="">All cases</option></select></div><div><label for="search-episode">Episode</label><select id="search-episode"><option value="">All episodes</option></select></div><div><label for="search-mode">Match</label><select id="search-mode"><option value="any">Any search word</option><option value="all">All search words</option></select></div><div><label for="search-sort">Sort by</label><select id="search-sort"><option value="relevance">Relevance (BM25)</option><option value="matches">Most word matches</option></select></div></div><button id="search-clear" type="button" class="clear-search">Clear search and filters</button></form>
+<p class="search-note">Search covers the supplied episode documents, including their coding tables and report extracts. It does not search the complete UN reports. Matches are whole words, ignoring case and accents; common English words are ignored. Repeated passages in a document count as repeated matches.</p><p id="search-count" role="status" aria-live="polite">Loading the document collection…</p><div id="search-results"></div><button id="search-more" type="button" class="btn btn-outline" hidden>Show more documents</button><noscript>Enable JavaScript to search this collection.</noscript>
+<details class="search-help"><summary>How ranking works</summary><p>BM25 scores documents using word frequency, how rare each word is across the collection, and document length. A high score means a better keyword match, not greater factual reliability. “Most word matches” sorts by the total occurrences of your search words. All 69 documents contribute to ranking statistics, even when filters are applied.</p><p>Search is lexical: it does not infer synonyms or translate terms. Quotes and punctuation are treated as separators, not phrase-search commands. Dates are episode dates as supplied, not report publication dates. “Ongoing” follows the documents’ 31/12/2025 reference date.</p></details></div></section></main><footer class="site-footer">
+    <div class="container">
+      <div class="foot">
+        <div>
+          <img src="assets/logo.svg" alt="EXPOSE">
+          <p>Experts Panels on Sanctions Evasion. A research project by Francesco, Irene and Ana University of Groningen.</p>
+        </div>
+        <div><h4>Explore</h4><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About us</a></li><li><a href="our-project.html">Our project</a></li><li><a href="database.html">Database</a></li>
+        <li><a href="countries.html">Countries</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Sources</h4><p style="font-size:.9rem">Cases are compiled from UN Panel of Experts reports and public reporting on them. Always check the original UN documents.</p></div>
+      </div>
+      <div class="legal"><span>&copy; <span data-year></span> EXPOSE project</span><span>Not an official UN website.</span></div>
+    </div>
+  </footer>
+<script src="js/main.js"></script><script src="js/bm25.js"></script><script src="data/episode-search.js"></script><script src="js/document-search.js"></script></body></html>
